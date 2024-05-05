@@ -57,7 +57,7 @@ async function processPDF() {
         fSpinner.stop({ text: chalk.red('Sorry something happened.'), mark: ':o', color: 'red' });
 
         // Restart on error
-        // processPDF();
+        processPDF();
     }
 }
 processPDF()
