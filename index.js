@@ -24,7 +24,17 @@ async function processPDF() {
         console.log(gradient.pastel.multiline(figlet.textSync('PDF Translator', { horizontalLayout: 'full' })));
         console.log(); // Empty line for space
 
-        const pdfFilePath = await selectPDFFilePath();
+        let pdfFilePath;
+        if (process.argv[2]) {
+            // If a command-line argument is provided, use it as the file path
+            pdfFilePath = process.argv[2];
+            if (!fs.existsSync(pdfFilePath)) {
+                throw new Error(chalk.red("The provided file path does not exist."));
+            }
+        } else {
+            // If no command-line argument is provided, prompt the user to select a PDF file
+            pdfFilePath = await selectPDFFilePath();
+        }
 
         const { data, textLanguage, targetLanguage } = await prepareTranslation(pdfFilePath);
         console.log();
@@ -47,7 +57,7 @@ async function processPDF() {
         fSpinner.stop({ text: chalk.red('Sorry something happened.'), mark: ':o', color: 'red' });
 
         // Restart on error
-        processPDF();
+        // processPDF();
     }
 }
 processPDF()
@@ -134,7 +144,11 @@ async function selectPDFFilePath() {
         const filePath = await selectFile();
         return filePath;
     } catch (error) {
-        console.error(chalk.red("Error selecting PDF file:"), error.message);
+        if (error && error.type) {
+            console.error(chalk.red("Error selecting PDF file:"), error.message);
+        } else {
+            console.error(chalk.red("Error selecting PDF file: User cancelled."));
+        }
         throw error;
     }
 }
