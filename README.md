@@ -7,7 +7,7 @@ This is a command-line tool for translating PDF documents.
 To install the PDF Translator tool, you can use npm:
 
 ```
-npm install -g pdf-translator
+npm install -g cli-pdf-translator
 ```
 
 ## Usage
@@ -15,13 +15,13 @@ npm install -g pdf-translator
 After installation, you can run the tool using the following command:
 
 ```
-pdf-translator
+cli-pdf-translator
 ```
 
 or
 
 ```
-pdf-translator <PAHT TO PDF>
+cli-pdf-translator <PAHT TO PDF>
 ```
 
 The tool will guide you through the process of selecting a PDF file, choosing translation options, and specifying the output format.
