@@ -17,13 +17,13 @@ or get it direcly from Github
 After installation, you can run the tool using the following command:
 
 ```
-node pdf-translator
+pdf-translator
 ```
 
 or
 
 ```
-node pdf-translator <PAHT TO PDF>
+pdf-translator <PAHT TO PDF>
 ```
 
 The tool will guide you through the process of selecting a PDF file, choosing translation options, and specifying the output format.
