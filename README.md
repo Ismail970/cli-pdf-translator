@@ -10,8 +10,6 @@ To install the PDF Translator tool, you can use npm:
 npm install -g pdf-translator
 ```
 
-or get it direcly from Github
-
 ## Usage
 
 After installation, you can run the tool using the following command:
