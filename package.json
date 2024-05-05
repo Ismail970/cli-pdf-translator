@@ -1,0 +1,27 @@
+{
+  "name": "pdftranslator",
+  "version": "0.0.5",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ."
+  },
+  "bin": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Simple PDF translator script.",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "chalk": "^5.3.0",
+    "cli-file-select": "^0.0.2",
+    "figlet": "^1.7.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.20",
+    "languagedetect": "^2.0.0",
+    "nanospinner": "^1.1.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^1.1.1",
+    "translate": "^3.0.0"
+  }
+}
